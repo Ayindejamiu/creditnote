@@ -1,0 +1,51 @@
+<div>
+<hr>
+
+<h4>Logged Data</h4>
+    
+    <div class="form-group row"><span ng-click="Export()" class="glyphicon glyphicon-download btn btn-primary"> Download PDF</span> <div class="col-xs-2"> <input class="form-control" type="text" ng-model="mysearch.Underwriter" placeholder="search underwriter" ></div> <div class="col-xs-2"><input class="form-control" type="text" ng-model="mysearch.Insurer" Placeholder="search insurer"  ></div> <div class="col-xs-2"><input class="form-control col-xs-2" type="text" ng-model="mysearch.MyEnddate" placeholder="search End Date"></div></div>
+    <table class="table table-bordered table-hover" ng-table="tableParams" id="credittable">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Insurer</th>
+            <th scope="col">Underwriter</th>
+            <th scope="col">Class</th>
+            <th scope="col">Gross Premium</th>
+            <th scope="col">Commission</th>
+            <th scope="col">Net Premium</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        
+        <tbody ng-repeat="x in Creditlist.reverse() | filter:mysearch | limitTo:limit track by $index ">
+          <tr>
+            <th scope="row">{{Creditlist.length - $index}}</th>
+            <td>{{x.Insurer}}</td>
+            <td>{{x.Underwriter}}</td>
+            <td>{{x.Iclass}}</td>
+            <td>{{x.Premium | number:2}}</td>
+            <td>{{x.Commission | number:2}}</td>
+            <td>{{x.Netpremium | number:2}}</td>
+            <td>{{x.MyStartdate}}</td>
+            <td>{{x.MyEnddate}}</td>
+            
+              
+              
+            <td><input ng-click="editFunc(x.Insurer,x.Underwriter,x.Iclass,x.Premium,x.Commission,x.Netpremium,x.MyStartdate,x.MyEnddate,x.timestamp)" class="btn btn-primary" value="Edit" type="button"></td>
+            <td><input ng-click="delFunc(x.timestamp)" class="btn btn-danger" value="Delete" type="button"> <span ng-click="printme(x.Insurer,x.Underwriter,x.Iclass,x.Premium | number:2,x.Commission | number:2,x.Netpremium | number:2,x.MyStartdate,x.MyEnddate,$index)"  class="glyphicon glyphicon-print"> </span></td>
+          </tr>
+          
+         
+            </tbody> 
+        
+     
+      </table>
+    
+       <div class="d-flex justify-content-center"><button class="btn btn-primary" ng-click="loadMore()" ng-show="Creditlist.length > limit">...load more</button></div>
+    <div class="d-flex justify-content-center"><div ng-hide="Creditlist.reverse()" class="spinner-grow" role="status" > </div></div>
+    
+</div>

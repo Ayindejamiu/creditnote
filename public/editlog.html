@@ -1,0 +1,51 @@
+  <div class="">
+    <h4>Edit Log</h4>
+
+    <form ng-submit="editFunc(eInsurer,eUnderwriter,eIclass,ePremium,eCommission,eNetpremium,eMyStartdate,eMyEnddate,eid)">
+<div class="form-group">
+            <label for="eid">Id</label>
+            <input type="text" class="form-control" disabled ng-model="eid" id="eid" >
+               </div>
+        <div class="form-group">
+        <label for="eptitle">Insurer</label>
+          <input type="text" class="form-control" ng-model="eInsurer" id="eInsurer" >
+             </div>
+        <div class="form-group">
+          <label for="edcode">Underwriter</label>
+            <input type="text" class="form-control" ng-model="eUnderwriter" id="eUnderwriter"> 
+        </div>
+        <div class="form-group">
+          <label for="emyClass">Class</label>
+            <input type="text" class="form-control" ng-model="emyClass" id="emyClass"> 
+        </div>
+        <div class="form-group">
+          <label for="eAmountInsured">Amount Insured</label>
+            <input type="text" class="form-control" ng-model="eAmountInsured" id="eAmountInsured" value={{eAmountInsured}}> 
+        </div>
+        
+       <div class="form-group">
+          <label for="eCommission">Commission</label>
+            <input type="text" class="form-control" ng-model="eCommission" ng-init="eCommission" id="eCommission" value={{eCommission}}> 
+        </div>
+        <div class="form-group">
+          <label for="eNpremium">Net Premium</label>
+            <input type="text" class="form-control" ng-model="eNpremium" ng-init="eNpremium" id="eNpremium" value={{eNpremium}}> 
+        </div>
+        <div class="form-group">
+          <label for="eRealdate">Date</label> 
+            <input type="date" class="form-control" ng-model="emyStartdate" ng-init="eRealdate" id="eRealdate" value="show me this"> 
+        </div>
+        <div class="form-group">
+          <label for="eEnddate">Date</label> 
+            <input type="date" class="form-control" ng-model="eEnddate"  id="eEnddate" value="show me this"> 
+        </div>
+      
+      
+   
+       
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+<hr>
+<!---  -->
+</div>

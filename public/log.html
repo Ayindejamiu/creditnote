@@ -1,0 +1,45 @@
+  <div class="">
+    <h4>Add Credit Note</h4>
+
+    <form ng-submit="logFunc(ptitle, dcode, myClass, AmountInsured, Commission, Npremium, Realdate, Enddate)">
+        <div class="form-group">
+          <label for="ptitle">Insurer</label>
+          <input type="text" class="form-control" ng-model="ptitle" id="ptitle" >
+             </div>
+        <div class="form-group">
+          <label for="dcode">Underwriter</label>
+            <input type="text" class="form-control" ng-model="dcode" id="dcode"> 
+        </div>
+       
+        <div class="form-group">
+          <label for="myClass">Class</label>
+            <input type="text" class="form-control" ng-model="myClass" id="myClass" /> 
+        </div>
+        <div class="form-group">
+          <label for="AmountInsured">Gross Premium</label>
+            <input type="text" class="form-control" ng-model="AmountInsured" id="AmountInsured" /> 
+        </div>
+        
+       <div class="form-group">
+          <label for="Commission">Commission</label>
+            <input type="text" class="form-control" ng-model="Commission" id="Commission" /> 
+        </div>
+        
+        <div class="form-group">
+          <label for="Npremium">Net Premium</label>
+            <input type="text" class="form-control" ng-model="Npremium" id="Npremium" /> 
+        </div>
+        <div class="form-group">
+          <label for="Realdate">Date</label>
+            <input type="date" class="form-control" ng-model="Realdate" id="Realdate" /> 
+        </div>
+    <div class="form-group">
+          <label for="Enddate">End Date</label>
+            <input type="date" class="form-control" ng-model="Enddate" id="Enddate" /> 
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+<hr>
+<!---  -->
+</div>
